@@ -414,8 +414,8 @@ Function DownloadFile(strUrl,strFile)
 End Function
 
 Sub clear(cur)
-    If objfs.FolderExists(cur(1)) Then objfs.DeleteFolder cur(1),True 
-    If objfs.FileExists(cur(2)) Then objfs.DeleteFile   cur(2),True 
+    If objfs.FolderExists(cur(1)) Then objfs.DeleteFolder cur(1),True
+    If objfs.FileExists(cur(2)) Then objfs.DeleteFile   cur(2),True
 End Sub
 
 Sub download(cur)
@@ -441,9 +441,9 @@ Sub extract(cur)
 	exe_file = """" & cur(2) & """"
     target_location = """" & cur(1) & """"
     If cur(5) Then
-        objws.Run exe_file & " /quiet InstallAllUsers=0 Include_launcher=0 Include_test=0 SimpleInstall=1 TargetDir=" & target_location, 0, true
+        objws.Run exe_file & " /quiet InstallAllUsers=0 Include_launcher=0 Include_test=0 Include_doc=0 Include_tcltk=0 Include_test=0 Shortcuts=0 SimpleInstall=1 TargetDir=" & target_location, 0, true
     Else
-        objws.Run exe_file & " InstallAllUsers=0 Include_launcher=0 Include_test=0 SimpleInstall=1 TargetDir=" & target_location, 0, true
+        objws.Run exe_file & " InstallAllUsers=0 Include_launcher=0 Include_test=0 Include_doc=0 Include_tcltk=0 Include_test=0 Shortcuts=0 SimpleInstall=1 TargetDir=" & target_location, 0, true
     End If
 
     If objfs.FolderExists(cur(1)) Then
