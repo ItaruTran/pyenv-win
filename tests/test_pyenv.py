@@ -37,7 +37,9 @@ class TestPyenv(TestPyenvBase):
         assert 'uninstall' in result
         assert 'rehash' in result
         assert 'version' in result
+        assert 'vname' in result
         assert 'versions' in result
+        assert 'version-name' in result
         assert 'exec' in result
         assert 'which' in result
         assert 'whence' in result
